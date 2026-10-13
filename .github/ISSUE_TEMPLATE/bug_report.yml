@@ -1,0 +1,82 @@
+name: Bug report
+description: Report a reproducible problem in open-todoist
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. A good bug report here is one where someone
+        else can reproduce it without asking you a follow-up question.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+      placeholder: |
+        I typed "Call the dentist tomorrow at 9am" and the preview showed
+        "Today 09:00" instead of "Tomorrow 09:00".
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the Inbox view
+        2. Type "..." into the quick-add box
+        3. Press Enter
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: input
+    id: input-line
+    attributes:
+      label: Exact input, if the parser is involved
+      description: Copy and paste the exact text you typed into the quick-add box.
+      placeholder: 'Call the dentist tomorrow at 9am #Health @phone p2'
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: v1.0.0 or a commit SHA
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser and version, and whether the data lives in IndexedDB or the localStorage fallback.
+      placeholder: Safari 18.2, macOS 15.3, IndexedDB
+    validations:
+      required: true
+
+  - type: textarea
+    id: data
+    attributes:
+      label: Task data (optional)
+      description: |
+        Use "JSON" in the status bar to export your tasks, then paste the
+        contents here. It contains your task text, so redact anything sensitive
+        first.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for this.
+          required: true
+        - label: This is a bug report, not a feature request.

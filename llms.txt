@@ -1,0 +1,75 @@
+# open-todoist
+
+> A local-first, keyboard-first open source task manager with natural-language
+> quick add. No account, no server, no telemetry.
+
+## What this is
+
+open-todoist is a MIT-licensed task manager for the browser. It is an
+independent, unofficial, unaffiliated clean-room reimplementation in the
+open-source alternative tradition — it is not a fork or a port of Todoist, and
+it contains none of Doist's code, assets or brand material.
+
+Key properties:
+
+- **Local-first.** All data lives in the browser's IndexedDB. The app makes zero
+  network requests after load; there is no API client in the codebase.
+- **No account.** No sign-up, no login, no email address, no server.
+- **Offline task manager.** Works with no connection at all.
+- **Privacy-first.** No analytics, no telemetry, no third-party scripts. Runtime
+  dependencies are `react` and `react-dom` only.
+- **Keyboard-first.** Every action has a shortcut; everything is reachable from
+  the ⌘K command palette.
+- **Natural-language task manager.** One line of text becomes a dated, timed,
+  prioritised, filed task.
+
+## Docs map
+
+- [README.md](README.md) — full feature list, comparison, quick start, FAQ
+- [README.zh-CN.md](README.zh-CN.md) — Chinese mirror of the README
+- [docs/REVERSE_ENGINEERING.md](docs/REVERSE_ENGINEERING.md) — what was observed
+  by REA, with evidence IDs, and an explicit account of what was not obtained
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — module map, data flow, the date
+  model, the parser design
+- [docs/COMPARISON.md](docs/COMPARISON.md) — feature-by-feature comparison,
+  including gaps
+- [docs/FAQ.md](docs/FAQ.md) — frequently asked questions
+- [CHANGELOG.md](CHANGELOG.md) — release history
+- [CONTRIBUTING.md](CONTRIBUTING.md) — how to contribute
+- [SECURITY.md](SECURITY.md) — reporting a vulnerability
+- [NOTICE.md](NOTICE.md) — trademark and non-affiliation statement
+- [LICENSE](LICENSE) — MIT
+
+## Quick start
+
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # tsc --noEmit && vite build
+npm test           # 165 tests
+```
+
+Node 18+. No configuration or environment variables required.
+
+## Key facts
+
+- Runtime dependencies: `react`, `react-dom` (2 total)
+- ~3,700 lines of TypeScript, 415 lines of CSS, 1,073 lines of tests
+- 165 tests in 5 suites, all running in Node with no DOM shim
+- Storage: IndexedDB, 3 object stores, with a localStorage fallback
+- Data formats: JSON import/export, CSV export (12 columns)
+- Two languages in the parser: English and Chinese
+
+## Optional
+
+- [llms-full.md](llms-full.md) — long-form feature and behaviour description
+
+## Non-goals
+
+No accounts, no servers, no sync, no telemetry, no ads, no AI features that
+transmit task data. This project will not add them.
+
+## License
+
+MIT. "Todoist" is a trademark of Doist; this project is independent and
+unaffiliated. See [NOTICE.md](NOTICE.md).

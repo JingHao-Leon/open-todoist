@@ -1,0 +1,67 @@
+name: Feature request
+description: Suggest a capability for open-todoist
+title: "[feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read the project's stated non-goals before filing:
+        no accounts, no server, no sync, no telemetry, no ads, and no AI
+        features that transmit task data. Requests that need any of those will
+        be declined, so it is kinder to check first.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the situation, not the solution.
+      placeholder: |
+        When I review my week I cannot tell which tasks repeat and which are
+        one-off, because the repeat is hidden behind a small icon.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: What would you expect to happen instead?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area?
+      multiple: true
+      options:
+        - Natural-language parsing
+        - Recurrence / repeating tasks
+        - Views, sorting and filtering
+        - Projects and labels
+        - Keyboard shortcuts and command palette
+        - Import / export
+        - Statistics
+        - Storage and reliability
+        - Documentation
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered
+      description: Including why they do not work.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: This does not require an account, a server or sync.
+          required: true
+        - label: This does not require sending my task data anywhere.
+          required: true
+        - label: I searched existing issues for this.
